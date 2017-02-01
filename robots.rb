@@ -15,7 +15,13 @@ class Robot
     "My name is #{@name}"
   end
 
+  def method_missing(m, *args, &block)
+    puts "Does not compute."
+  end
+
 end
+
+
 
 rob = Robot.new("Rob")
 
@@ -49,8 +55,9 @@ puts calc.change_name("Balculon")
 
 
 
+
 # Adventure Mode
-our_class = ["Kalea", "Nancy", "David", "Ron", "Laura", "Dave", "Demtra", "Kendrick", "Phil", "Ben", "Michael", "Miguel"]
+our_class = ["Kalea", "Nancy", "David", "Ron", "Laura", "Dave", "Demetra", "Kendrick", "Phil", "Ben", "Michael", "Miguel"]
 
 robot_class = our_class.collect { |student| Robot.new(student) }
 puts robot_class
@@ -61,6 +68,3 @@ puts robot_class
 
 random_robot_class = our_class.collect { |student| [Robot, BendingUnit, ActorUnit].sample.new(student) }
 puts random_robot_class
-
-
-# Randomly assign the class of the robot on creation.
