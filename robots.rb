@@ -57,11 +57,10 @@ puts robot_class
 
 
 
-
-
-
 # Epic Mode
 
+random_robot_class = our_class.collect { |student| [Robot, BendingUnit, ActorUnit].sample.new(student) }
+puts random_robot_class
 
 
 # Randomly assign the class of the robot on creation.
