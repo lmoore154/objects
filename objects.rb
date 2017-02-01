@@ -11,13 +11,13 @@ class Robot
     "Hi!"
   end
 
-  def say_name(name)
+  def say_name
     "My name is #{@name}"
   end
 
 end
 
-rob = Robot.new
+rob = Robot.new("Rob")
 
 
 
@@ -30,7 +30,7 @@ class BendingUnit < Robot
 
 end
 
-bender = BendingUnit.new
+bender = BendingUnit.new("flexo")
 
 
 
@@ -45,7 +45,7 @@ class ActorUnit < Robot
 end
 
 calc = ActorUnit.new("Calc")
-
+puts calc.change_name("Balculon")
 
 
 
@@ -56,10 +56,12 @@ robot_class = our_class.collect { |student| Robot.new(student) }
 puts robot_class
 
 
-# Robots should also have a height, with a default value of 10
 
 
 
 
 # Epic Mode
+
+
+
 # Randomly assign the class of the robot on creation.
