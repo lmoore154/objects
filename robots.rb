@@ -5,6 +5,7 @@ class Robot
 
   def initialize(name, height=10)
     @name = name
+    @height = height
   end
 
   def say_hi
@@ -15,13 +16,11 @@ class Robot
     "My name is #{@name}"
   end
 
-  def method_missing(m, *args, &block)
-    puts "Does not compute."
+  def method_missing(m, *args, &block)       # Legendary mode
+    puts "Does not compute, #{m} does not exist."
   end
 
 end
-
-
 
 rob = Robot.new("Rob")
 
@@ -36,7 +35,7 @@ class BendingUnit < Robot
 
 end
 
-bender = BendingUnit.new("flexo")
+bender = BendingUnit.new("Flexo")
 
 
 
@@ -50,7 +49,7 @@ class ActorUnit < Robot
 
 end
 
-calc = ActorUnit.new("Calc")
+calc = ActorUnit.new("Calculon")
 puts calc.change_name("Balculon")
 
 
@@ -68,3 +67,7 @@ puts robot_class
 
 random_robot_class = our_class.collect { |student| [Robot, BendingUnit, ActorUnit].sample.new(student) }
 puts random_robot_class
+
+
+
+# Legendary mode in Robot class
