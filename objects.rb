@@ -1,25 +1,61 @@
+
+
 # Explorer Mode
-# Define a Robot class: A robot has a name
-# A robot instance should have a method called 'say_hi' and it should return "Hi!"
-# A robot instance should have a method called 'say_name' and it should return "My name is X" where X is the robot's name
+class Robot
 
-# Define a BendingUnit class
-# A BendingUnit inherits from Robot
-# A bending unit instance has a method called 'bend'
-# The bend method has one argument 'objecttobend'
-# The bend method should put to the console "Bend X!" where X is objecttobend
+  def initialize(name, height=10)
+    @name = name
+  end
 
-# Define an ActorUnit class
-# An ActorUnit inherits from Robot
-# An ActorUnit instance has a method called 'change_name'
-# The 'changename' method accepts an argument 'newname'
-# The 'changename' method changes the name property of the robot to 'newname'
+  def say_hi
+    "Hi!"
+  end
+
+  def say_name(name)
+    "My name is #{@name}"
+  end
+
+end
+
+rob = Robot.new
+
+
+
+
+class BendingUnit < Robot
+
+  def bend(object_to_bend)
+    puts "Bend #{object_to_bend}!"
+  end
+
+end
+
+bender = BendingUnit.new
+
+
+
+
+class ActorUnit < Robot
+
+  def change_name(newname)
+    @name = newname
+    puts "Your new name is #{@name}!"
+  end
+
+end
+
+calc = ActorUnit.new("Calc")
+
 
 
 
 # Adventure Mode
-# Take our student array from yesterday and (programmatically) create robots out of all of them and store them in an array.
-# Do the previous using an Enumerable method other than each
+our_class = ["Kalea", "Nancy", "David", "Ron", "Laura", "Dave", "Demtra", "Kendrick", "Phil", "Ben", "Michael", "Miguel"]
+
+robot_class = our_class.collect { |student| Robot.new(student) }
+puts robot_class
+
+
 # Robots should also have a height, with a default value of 10
 
 
